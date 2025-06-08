@@ -21,7 +21,7 @@ app.use("/customer/auth/*", function auth(req, res, next) {
     if (err) {
       return res.status(403).json({ message: "User not authenticated" });
     }
-    req.user = user; // Optionally store user info in req.user for downstream handlers
+    req.user = user; // Attach user info to request object
     next();
   });
 });
